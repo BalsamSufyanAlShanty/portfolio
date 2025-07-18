@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بلسم الشنطي | مصممة جرافيك</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif; 
+      background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+      color: #ffffff;
+      line-height: 1.7;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+
+    }
+
+    .logo {
+      overflow: hidden;
+    }
+
+    .logo img {
+      height: 60px;
+      transform: scale(1.1);
+      transform-origin: center;
+      display: block;
+       height: auto; max-height: 100px;
+       transition: transform 0.3s ease-in-out;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #f5a623;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    nav ul li a:hover {
+      color: #ffffff;
+        font-weight: 400;          /* وزن الخط العادي */
+  letter-spacing: normal;    /* مسافات الحروف طبيعية للنص */
+  text-shadow: none; 
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+       padding-top: 80px;
+  padding-bottom: 80px;
+  
+    }
+    section:not(:last-child) {
+  padding-bottom: 100px;
+}
+
+    /* ===== HERO SECTION (جديدة ومحترفة) ===== */
+    #hero {
+      height: 100vh;
+      background: linear-gradient(-45deg, #1f1f1f, #2a2a2a, #1f1f1f, #3a3a3a);
+      background-size: 400% 400%;
+      animation: animateBG 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 0 20px;
+    }
+
+    @keyframes animateBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero-content {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .hero-img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #f5a623;
+      background-color: #fff;
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* مؤشر يد */
+      
+    }
+    .hero-img:hover {
+  transform: rotate(10deg) scale(1.05);
+  box-shadow: 0 10px 20px rgba(245, 166, 35, 0.7);
+  cursor: pointer;
+}
+
+
+    #hero h1 {
+      font-size: 2.5em;
+      color: #f5a623;
+      margin-bottom: 10px;
+        animation: slideIn 1s ease forwards;
+          font-weight: 700;          /* وزن خط أثقل */
+  letter-spacing: 0.08em;    /* مسافة بين الحروف */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); 
+}
+@keyframes slideIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+    }
+
+    #hero p {
+      font-size: 1.2em;
+      color: #ffffff;
+      margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .hero-buttons a {
+      text-decoration: none;
+      color: white;
+      padding: 10px 20px;
+      background-color: #f5a623;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .hero-buttons a:hover {
+      background-color: #e29500;
+      transform: scale(1.05);
+    }
+
+    .hero-buttons a.outline {
+      background-color: transparent;
+      border: 2px solid #f5a623;
+      color: #f5a623;
+    }
+
+    .hero-buttons a.outline:hover {
+      background-color: #f5a623;
+      color: white;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1025px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+
+    /* باقي الأقسام */
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #f5a623;
+       font-weight: 700;          /* أثقل من النص */
+  letter-spacing: 0.05em;    /* مسافة بسيطة */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .skills-list div {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      border: 1px solid #f5a623;
+      color: #ffffff;
+    }
+
+    .project {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      border: 1px solid #444;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #888;
+      border-radius: 6px;
+      color: #fff;
+    }
+
+    .contact-form button {
+      background-color: #f5a623;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #e29500;
+    }
+
+    footer {
+      background-color: #1f1f1f;
+      color: #888;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      #hero h1 {
+        font-size: 2em;
+      }
+
+      .hero-img {
+        width: 90px;
+        height: 90px;
+          transition: transform 0.5s ease, box-shadow 0.3s ease;
+
+      }
+    }
+    .projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+} 
+
+.project {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #444;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.03);
+}
+
+#more-projects {
+  display: none;
+}
+
+.show-more-btn {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #f5a623;
+  color: #f5a623;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.show-more-btn:hover {
+  background-color: #f5a623;
+  color: white;
+}
+/* ** */
+.filter-btn {
+  padding: 8px 16px;
+  margin: 5px;
+  border: 2px solid #f5a623;
+  background: transparent;
+  color: #f5a623;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.filter-btn:hover {
+  background: #f5a623;
+  color: white;
+}
+/* *** */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.project {
+  min-height: 300px;
+}
+.project img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+.testimonials {
+  padding: 60px 20px;
+  background-color: #1c1c1c; /* نفس خلفية المهارات */
+  text-align: center;
+}
+
+.section-title {
+  color: #f5a623; /* نفس لون العناوين */
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  border-bottom: 3px solid #f57c00;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.testimonials-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.testimonial-card {
+  flex: 1 1 300px;
+  max-width: 400px;
+  border: 1px solid #f5a623;
+  border-radius: 16px;
+  background-color: #2b2b2b; /* رمادي داكن أنيق */
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-card img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #f5a623;
+}
+@media (max-width: 600px) {
+  .hero-text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #ff7a00;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .hero-section {
+    padding: 20px 10px;
+  }
+}
+
+
+
+  </style>
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>بلسم الشنطي | مصممة جرافيك</title>
+
+  <!-- وسوم تحسين السيو (SEO) -->
+  <meta name="description" content="بلسم الشنطي | مصممة جرافيك متخصصة في الهويات البصرية والتصميم الإعلاني وتطوير مواقع ووردبريس. شاهد أعمالي الآن.">
+  <meta name="keywords" content="بلسم الشنطي, تصميم جرافيك, هوية بصرية, شعارات, ووردبريس, مصممة فلسطينية">
+  <meta name="author" content="بلسم الشنطي">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* كود التصميم */
+  </style>
+</head>
+
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="images/Screenshot-90-removebg-preview.png" alt="شعار بلسم" style="height: 80px; object-fit: contain;">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">عنّي</a></li>
+        <li><a href="#skills">المهارات</a></li>
+        <li><a href="#projects">المشاريع</a></li>
+        <li><a href="#contact"> التواصل</a></li>
+        <li><a href="#testimonials">آراء العملاء</a></li>
+
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ✅ واجهة البداية الاحترافية -->
+  <section id="hero">
+    <div class="hero-content">
+      <img src="images/Screenshot-90-removebg-preview.png" alt="بلسم الشنطي" class="hero-img">
+      <h1> بلسم سفيان الشنطي</h1>
+      <p>مصممة جرافيك متخصصة في بناء هويات بصرية إبداعية تعكس شخصية علامتك التجارية ✨</p>
+      <div class="hero-buttons">
+      <a href="file/CVBalsam.pdf.pdf" target="_blank">السيرة الذاتية</a>
+        <a href="#projects">شاهد أعمالي</a>
+        <a href="#contact" class="outline">تواصل معي</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- باقي الأقسام -->
+  <section id="about">
+    <h2>عنّي</h2>
+    <p>أنا بلسم سفيان الشنطي، مصممة جرافيك في الثانوية العامة بالفرع الصناعي، وطالبة في هندسة النظم الذكية والحاسوب بجامعة الأقصى.</p>
+    <p>منذ بداياتي في تخصص التصميم الجرافيكي، اكتشفت شغفي بالتفاصيل البصرية، ووجدت نفسي أعبّر بالألوان والأشكال عن الأفكار بطريقة تجعلها أقرب وأسهل للفهم.</p>
+    <p>بدأت عملي الحر في تصميم الهويات والمواقع الإلكترونية باستخدام WordPress، واشتغلت مع عملاء من جنسيات مختلفة. أستمتع بتحويل الأفكار المعقدة إلى تصاميم بسيطة وواضحة، وأحب المشاريع اللي إلها رسالة وهدف حقيقي.</p>
+    <p>كجزء من تطويري لمهاراتي، التحقت بدورة Full Stack Web Development، وتعلمت أساسيات تطوير المواقع من الواجهة الأمامية إلى الخلفية. رغم إن الظروف ما سمحتلي أكمل الدورة بسبب الحرب، لكن التجربة خلتني أتمسك بطموحي أكثر، وإن شاء الله رح أرجع أكملها قريباً.</p>
+    <p>بالنسبة إلي، التصميم مش بس شغل، هو شغف، ورسالة، وطريقة للتعبير عن الأفكار بأسلوب بصري ذكي ومؤثر.</p>
+  </section>
+
+  <section id="skills">
+    <h2>المهارات</h2>
+    <div class="skills-list">
+      <div>Adobe Photoshop</div>
+      <div>Adobe Illustrator</div>
+      <div>Adobe Indesign </div>
+      <div>تصميم شعارات</div>
+      <div>هوية بصرية</div>
+      <div>تصميم إعلانات</div>
+      <div>سوشيال ميديا</div>
+      <div>تصميم مواقع ووردبريس</div>
+      <div>UI/UX</div>
+      <div>Front End</div>
+
+      
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>مشاريعي</h2>
+    <!-- ** -->
+     <div style="text-align: center; margin-bottom: 30px;">
+  <button onclick="filterProjects('all')" class="filter-btn">الكل</button>
+  <button onclick="filterProjects('poster')" class="filter-btn">بوسترات</button>
+  <button onclick="filterProjects('identity')" class="filter-btn">هوية بصرية</button>
+  <button onclick="filterProjects('card')" class="filter-btn">متجر أو مدونة إلكترونية </button>
+  <button onclick="filterProjects('brochure')" class="filter-btn">بروشورات</button>
+</div>
+<!-- ** -->
+ <div id="more-projects" class="projects-grid"></div>
+      <div class="projects-grid">
+       <div class="project identity">
+        <img src="images/business-card.jpg" alt="تصميم بزنس كارد" style="width: 100%; border-radius: 12px; margin-bottom: 15px; cursor:pointer;" onclick="showPopup(this.src)">
+  <h3 style="color: #f5a623;">تصميم هوية بصرية كاملة</h3>
+  <p>  هوية بصرية متكاملة بتصميم احترافي تعكس جوهر العلامة بأسلوب بصري موحّد، يوازن بين التميّز والبساطة لتعزيز حضورها في السوق وبناء انطباع موثوق .</p>
+  <a href="https://mostaql.com/portfolio/1560280-%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D9%87%D9%88%D9%8A%D8%A9-%D8%A8%D8%B5%D8%B1%D9%8A%D8%A9-%D9%84%D8%B4%D8%B1%D9%83%D8%A9" 
+     target="_blank" 
+     style="display: inline-block; margin-top: 10px; color: #f5a623; font-weight: bold; text-decoration: underline;">
+    مشاهدة المشروع على مستقل
+  </a>
+</div>
+ <div class="project brochure">
+ <img src="images/brochure.jpg" alt="تصميم بزنس كارد" style="width: 100%; border-radius: 12px; margin-bottom: 15px; cursor:pointer;" onclick="showPopup(this.src)">
+  <h3 style="color: #f5a623;">  بروشور راقٍ يُبرز خدماتك  </h3>
+  <p> بروشور احترافي بتصميم أنيق يُبرز خدمات المؤسسة وأهدافها بأسلوب بصري منظم، يجمع بين الوضوح والجاذبية لتعزيز هوية العلامة وثقة الجمهور.</p>
+  <a href="https://mostaql.com/portfolio/822656-%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D8%A8%D8%B1%D9%88%D8%B4%D9%88%D8%B1" 
+     target="_blank" 
+     style="display: inline-block; margin-top: 10px; color: #f5a623; font-weight: bold; text-decoration: underline;">
+    مشاهدة المشروع على مستقل
+  </a>
+</div>
+  
+      <div class="project poster">
+         <img src="images/poster.jpg" alt="تصميم بزنس كارد" style="width: 100%; border-radius: 12px; margin-bottom: 15px; cursor:pointer;" onclick="showPopup(this.src)">
+  <h3 style="color: #f5a623;"> بوستر احترافي يعكس هويتك </h3>
+  <p>بوستر إعلاني يجذب الانتباه فورًا، بتصميم بصري احترافي يعزز الرسالة التسويقية ويخلّيها تترك أثر واضح.</p>
+  <a href="https://mostaql.com/portfolio/833666-%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D8%A8%D9%88%D8%B3%D8%AA%D8%B1-%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D9%8A" 
+     target="_blank" 
+     style="display: inline-block; margin-top: 10px; color: #f5a623; font-weight: bold; text-decoration: underline;">
+    مشاهدة المشروع على مستقل
+  </a>
+</div>
+<!-- <div id="more-projects" class="projects-grid"> -->
+<div class="project card"> <!-- متجر أو مدونة -->
+      <img src="images/store.png" alt="مشروع إضافي" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
+      <h3 style="color: #f5a623;"> تصميم متجر إلكتروني مبتكر</h3>
+      <p> متجر إلكتروني مصمم باحترافية لتجربة مستخدم سلسة وجذابة، وتنظيم واضح لمنتجات متنوعة يعزز ثقة العملاء ويسهل التسوق بفعالية.<p>
+       <a href="https://mostaql.com/portfolio/825404-%D8%AA%D8%B5%D9%85%D9%8A%D9%85%D8%AA%D8%B7%D9%88%D9%8A%D8%B1-%D9%85%D9%88%D8%A7%D9%82%D8%B9-%D9%88%D9%88%D8%B1%D8%AF%D8%A8%D8%B1%D9%8A%D8%B3" 
+     target="_blank" 
+     style="display: inline-block; margin-top: 10px; color: #f5a623; font-weight: bold; text-decoration: underline;">
+    مشاهدة المشروع على مستقل
+  </a>
+</div>
+
+
+<div class="project card"> <!-- متجر أو مدونة -->
+      <img src="images/Blog.png" alt="مشروع إضافي" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
+      <h3 style="color: #f5a623;">مدونة تفاعلية متكاملة </h3>
+      <p> مدونة مصممة بعناية لتقديم محتوى منظم وجذاب، تتيح تجربة قراءة مريحة وتعزز تواصل فعّال مع الجمهور.</p>
+       <a href="https://mostaql.com/portfolio/825362-%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D9%85%D8%AF%D9%88%D9%86%D8%A9-%D9%85%D9%85%D9%8A%D8%B2%D8%A9-%D9%88%D8%A8%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A%D8%A9" 
+     target="_blank" 
+     style="display: inline-block; margin-top: 10px; color: #f5a623; font-weight: bold; text-decoration: underline;">
+    مشاهدة المشروع على مستقل
+  </a>
+</div>
+
+<div class="project identity "> <!-- هوية بصرية -->
+      <img src="images/بزنس-كارد.jpg" alt="مشروع إضافي" style="width: 100%; border-radius: 12px; margin-bottom: 15px;">
+      <h3 style="color: #f5a623;">تصميم هوية بصرية متميزة</h3>
+      <p>هوية بصرية مبتكرة تجمع بين البساطة والتميز، لتعكس رؤية العلامة التجارية وتعزز حضورها بشكل احترافي وجذاب.</p>
+       <a href="https://mostaql.com/portfolio/1560208-%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D9%87%D9%88%D9%8A%D8%A9-%D8%A8%D8%B5%D8%B1%D9%8A%D8%A9-%D9%83%D8%A7%D9%85%D9%84%D8%A9" 
+     target="_blank" 
+     style="display: inline-block; margin-top: 10px; color: #f5a623; font-weight: bold; text-decoration: underline;">
+    مشاهدة المشروع على مستقل
+  </a>
+</div>
+   
+  </div> 
+
+
+  
+
+</section>
+
+<section id="testimonials" class="testimonial-section">
+  <h2>آراء العملاء</h2>
+
+
+
+  <div class="testimonials-wrapper">
+    <div class="testimonial-card">
+      <img src="images/7.png" alt="تقييم عميل 1">
+         
+          <div style="padding: 3px;"></div>
+          <a href="https://mostaql.com/u/balsam_alshanty/reviews" ></a>
+        <p style="color: #fff; font-size: 0.95em; font-style: italic;">
+        "ممتازة جدا ومتعاونة انصح بالتعامل معها 
+        شكرا لك ولمستقل "
+      </p>
+       <p style="color: #f5a623; font-size: 0.9em;">— عميل من مستقل</p>
+       
+
+    </div>
+
+    <div class="testimonial-card">
+      <img src="images/testimonial2.png" alt="تقييم عميل 2">
+          <a href="https://mostaql.com/u/balsam_alshanty/reviews" ></a>
+        <div style="padding: 3px;"></div>
+        <p style="color: #fff; font-size: 0.95em; font-style: italic;">
+        "سعدت بالتعامل مع المصممة بلسم ,ما شاء الله محترفة في عملها ومتعاونة وسريعة في عملها واتمنى لها التوفيق "
+      </p>
+       <p style="color: #f5a623; font-size: 0.9em;">— عميل من مستقل</p>
+    </div>
+  </div>
+</section>
+
+
+
+   <section id="contact">
+    <h2>تواصل معي</h2>
+    <p style="margin-bottom: 20px;">هل لديك فكرة مشروع أو تحتاج لتصميم فريد؟ يسعدني العمل معك، راسلني الآن ✨</p>
+
+  <form class="contact-form">
+    <input type="text" placeholder="الاسم الكامل" required>
+    <input type="email" placeholder="البريد الإلكتروني" required>
+    <textarea rows="5" placeholder="اكتب رسالتك هنا..." required></textarea>
+    <p id="success-msg" style="display:none; color:#4CAF50; font-weight:bold; text-align:center; margin-top:15px;">
+  ✅ تم إرسال الرسالة بنجاح، شكرًا لتواصلك!
+</p>
+
+    <button type="submit">إرسال</button>
+  </form>
+
+  <!-- روابط تواصل خارجية بألوان متناسقة -->
+  <div style="margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <a href="https://wa.me/+972599495918" target="_blank"
+      style="padding: 10px 18px; background-color: rgba(255,255,255,0.08); border: 1px solid #f5a623; color: #f5a623; border-radius: 8px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#f5a623" viewBox="0 0 24 24">
+    <path d="M20.52 3.48A11.77 11.77 0 0012 0C5.373 0 0 5.373 0 12a11.82 11.82 0 001.634 6.153L0 24l5.928-1.561A11.92 11.92 0 0012 24c6.627 0 12-5.373 12-12 0-3.214-1.25-6.22-3.48-8.52zM12 22.152a9.99 9.99 0 01-5.152-1.444l-.37-.219-3.523.927.941-3.434-.241-.368A9.99 9.99 0 012.019 12c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10zm5.43-7.106c-.29-.144-1.716-.85-1.983-.947-.267-.1-.462-.144-.657.144s-.753.947-.923 1.144c-.17.2-.337.222-.627.074-.29-.146-1.227-.45-2.338-1.438-.864-.77-1.447-1.722-1.618-2.01-.17-.288-.018-.444.13-.59.134-.133.29-.347.435-.52.15-.173.2-.288.3-.48.1-.192.05-.36-.025-.506-.074-.144-.657-1.58-.9-2.167-.236-.57-.476-.493-.657-.503l-.56-.01c-.19 0-.5.07-.76.36s-1 1-1 2.438 1.025 2.83 1.168 3.03c.146.2 2.016 3.073 4.89 4.305.683.295 1.216.47 1.63.6.683.217 1.305.186 1.796.113.547-.082 1.716-.7 1.96-1.38.243-.678.243-1.258.17-1.38-.073-.12-.267-.192-.56-.337z"/>
+  </svg>
+  واتساب
+    </a>
+
+       <a href="https://www.instagram.com/balsam_alshanty/" target="_blank"
+      style="padding: 10px 18px; background-color: rgba(255,255,255,0.08); border: 1px solid #f5a623; color: #f5a623; border-radius: 8px; font-weight: bold; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+  <!-- أيقونة إنستجرام SVG -->
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#f5a623" viewBox="0 0 24 24">
+    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.5.5.2.9.5 1.3 1 .4.4.7.8 1 .3.2.4.4 1 .5 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.5 2.2-.2.5-.5.9-1 1.3-.4.4-.8.7-1.3 1-.4.2-1 .4-2.2.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.5-.5-.2-.9-.5-1.3-1-.4-.4-.7-.8-1-1.3-.2-.4-.4-1-.5-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.8.5-2.2.2-.5.5-.9 1-1.3.4-.4.8-.7 1.3-1 .4-.2 1-.4 2.2-.5 1.3-.1 1.7-.1 4.9-.1m0-2.2C8.7 0 8.3 0 7 .1 5.7.2 4.6.5 3.7 1c-.9.5-1.6 1.2-2.2 2.2-.5.9-.8 2-1 3.3C.1 8.3 0 8.7 0 12c0 3.3.1 3.7.2 5 .2 1.3.5 2.4 1 3.3.5.9 1.2 1.6 2.2 2.2.9.5 2 0.8 3.3 1C8.3 23.9 8.7 24 12 24s3.7-.1 5-.2c1.3-.2 2.4-.5 3.3-1 .9-.5 1.6-1.2 2.2-2.2.5-.9.8-2 1-3.3.1-1.3.2-1.7.2-5s-.1-3.7-.2-5c-.2-1.3-.5-2.4-1-3.3-.5-.9-1.2-1.6-2.2-2.2-.9-.5-2-.8-3.3-1C15.7.1 15.3 0 12 0z"/>
+    <path d="M12 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.3A4.1 4.1 0 1 1 16.1 12 4.1 4.1 0 0 1 12 16.1z"/>
+    <circle cx="18.4" cy="5.6" r="1.4"/>
+  </svg>
+  إنستجرام
+    </a>
+ 
+
+    <a href="mailto:blsmalshnty@gmail.com"
+         style="display: flex; align-items: center; gap: 8px; padding: 10px 18px;
+          background-color: rgba(255,255,255,0.08); border: 1px solid #f5a623;
+          color: #f5a623; border-radius: 8px; font-weight: bold; text-decoration: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+    <path d="M4 4h16v16H4z" />
+    <polyline points="22,6 12,13 2,6" />
+  </svg>
+  البريد الإلكتروني
+    </a>
+
+    <a href="https://mostaql.com/u/balsam_alshanty" target="_blank"
+          style="display: flex; align-items: center; gap: 8px; padding: 10px 18px;
+          background-color: rgba(255,255,255,0.08); border: 1px solid #f5a623;
+          color: #f5a623; border-radius: 8px; font-weight: bold; text-decoration: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+    <rect x="3" y="7" width="18" height="13" rx="2" ry="2"/>
+    <path d="M16 7V4a2 2 0 0 0-4 0v3"/>
+  </svg>
+  مستقل
+    </a>
+
+
+    <a href="file/CVBalsam.pdf" target="_blank"
+        style="display: flex; align-items: center; gap: 8px; padding: 10px 18px;
+          background-color: rgba(255,255,255,0.08); border: 1px solid #f5a623;
+          color: #f5a623; border-radius: 8px; font-weight: bold; text-decoration: none;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/>
+  </svg>
+  السيرة الذاتية 
+    </a>
+  </div>
+
+
+</section>
+
+
+  <footer>
+    &copy; 2025 بلسم الشنطي | جميع الحقوق محفوظة
+  </footer>
+  <!-- <script>
+  function showMoreProjects() {
+    const more = document.getElementById('more-projects');
+     more.style.display = 'block';
+    event.target.style.display = 'none';
+  } -->
+</script>
+<!-- ✅ نافذة العرض المنبثقة -->
+<div id="popup-modal" style="display:none; position:fixed; top:0; right:0; bottom:0; left:0; background-color:rgba(0,0,0,0.8); z-index:9999; align-items:center; justify-content:center;">
+  <div style="max-width:90%; max-height:90%; position:relative;">
+    <span onclick="closePopup()" style="position:absolute; top:-20px; left:-20px; font-size:30px; color:white; cursor:pointer;">&times;</span>
+    <img id="popup-img" src="" alt="عرض المشروع" style="max-width:100%; max-height:100%; border-radius: 12px;">
+  </div>
+</div>
+
+<script>
+  function showPopup(src) {
+    document.getElementById('popup-img').src = src;
+    document.getElementById('popup-modal').style.display = 'flex';
+  }
+  function closePopup() {
+    document.getElementById('popup-modal').style.display = 'none';
+  }
+  
+</script>
+<script>
+  function filterProjects(type) {
+    const projects = document.querySelectorAll('.project');
+    projects.forEach(p => {
+      if (type === 'all' || p.classList.contains(type)) {
+        p.style.display = 'block';
+      } else {
+        p.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+
+<script>
+  function showMoreProjects() {
+    const more = document.getElementById('more-projects');
+    more.style.display = 'grid'; // عشان يظهر كشبكة
+    more.classList.add('projects-grid'); // عشان تنسق المشاريع
+    const btn = document.getElementById('show-more-btn');
+    if(btn) {
+      btn.style.display = 'none'; // إخفاء زر العرض بعد الضغط
+    }
+  }
+</script>
+<script>
+  const form = document.querySelector('.contact-form');
+  const successMsg = document.getElementById('success-msg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // منع الإرسال الحقيقي
+
+    // مسح الحقول بعد الإرسال
+    form.reset();
+
+    // إظهار الرسالة
+    successMsg.style.display = 'block';
+
+    // إخفاؤها بعد 5 ثوانٍ
+    setTimeout(() => {
+      successMsg.style.display = 'none';
+    }, 5000);
+  });
+</script>
+
+<!-- ✅ زر العودة للأعلى -->
+<button onclick="scrollToTop()" id="scrollTopBtn" title="العودة لأعلى"
+  style="display: none; position: fixed; bottom: 30px; left: 30px; z-index: 9999; background-color: #f5a623; color: white; border: none; padding: 12px 18px; border-radius: 50%; font-size: 20px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+  ↑
+</button>
+
+<script>
+  // زر الرجوع للأعلى
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  // إظهار الزر عند التمرير لأسفل
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  };
+
+  // التمرير للأعلى عند الضغط
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
